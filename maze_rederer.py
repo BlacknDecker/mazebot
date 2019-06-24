@@ -15,11 +15,11 @@ class MazeRenderer:
     def __init__(self, window_size, cell_n, title):
         pygame.init()
         # Window Parameters
-        self.window_size = window_size
         self.cell_n = cell_n
-        self.square_size = math.floor(window_size / cell_n)
+        self.square_size = math.ceil(window_size / cell_n)
+        self.window_size = cell_n*self.square_size
         # Create surface
-        self.display_surf = pygame.display.set_mode((window_size, window_size), 0, 32)
+        self.display_surf = pygame.display.set_mode((self.window_size, self.window_size), 0, 32)
         pygame.display.set_caption(title)
         # Cells Grid
         self.grid = self.createGrid(cell_n)

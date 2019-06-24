@@ -131,5 +131,5 @@ class MazeBot:
 
 
 mb = MazeBot()
-mb.solve_random_maze(100)
+mb.solve_random_maze(200)
 #mb.race()
